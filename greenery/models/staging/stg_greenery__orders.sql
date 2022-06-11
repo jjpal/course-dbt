@@ -22,7 +22,7 @@ with src_greenery_orders as (
     , estimated_delivery_at as estimated_delivery_at_utc
     , delivered_at as delivered_at_utc
     , status as order_status
-  from src_greenery_users
+  from src_greenery_orders
 )
 
 select * from renamed_recast

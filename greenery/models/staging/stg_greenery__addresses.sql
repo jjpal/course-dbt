@@ -14,7 +14,7 @@ with src_greenery_addresses as (
     , zipcode
     , state
     , country    
-  from src_greenery_users
+  from src_greenery_addresses
 )
 
 select * from renamed_recast

@@ -12,7 +12,7 @@ with src_greenery_promos as (
     promo_id as promo_guid
     , discount
     , status as promo_status
-  from src_greenery_users
+  from src_greenery_promos
 )
 
 select * from renamed_recast

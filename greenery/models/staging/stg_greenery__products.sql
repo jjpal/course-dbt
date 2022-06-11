@@ -13,7 +13,7 @@ with src_greenery_products as (
     , name as product_name
     , price as product_price
     , inventory as product_inventory
-  from src_greenery_users
+  from src_greenery_products
 )
 
 select * from renamed_recast

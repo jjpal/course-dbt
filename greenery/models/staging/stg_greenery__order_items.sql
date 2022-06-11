@@ -12,7 +12,7 @@ with src_greenery_order_items as (
     order_id as order_guid
     , product_id as product_guid 
     , quantity 
-  from src_greenery_users
+  from src_greenery_order_items
 )
 
 select * from renamed_recast
