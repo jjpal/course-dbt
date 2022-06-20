@@ -75,10 +75,10 @@ More stakeholders are coming to us for data, but we need to get more models crea
     - added fact_order that includes orders information, applied discount/current promo status from promos table, ordered quantity from order_items, and product price/ inventory to apply possible discount if product is not available.
 
     For Marketing:
-   - 
+   - added user_order_facts that includes user and order information.
 
     For Product:
-    - added fact_page_views which include totals for the different events
+    - added fact_page_views which include totals for the different events.
     
        
 
@@ -96,6 +96,10 @@ We added some more models and transformed some data! Now we need to make sure th
 - Add dbt tests into your dbt project on your existing models from Week 1, and new models from the section above
 
 - What assumptions are you making about each model? (i.e. why are you adding each test?)
+ * applied_discount_order_total - discount amount should not be greater than order total
+ * product_price_positive - product price should be positive
+ * user_name_account_age - user_name and account_age (date since user registered) should 
+   not be null.
 
 - Did you find any “bad” data as you added and ran tests on your models?
 - How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
@@ -104,4 +108,6 @@ We added some more models and transformed some data! Now we need to make sure th
 
 Your stakeholders at Greenery want to understand the state of the data each day. 
 - Explain how you would ensure these tests are passing regularly 
+  Store results and forward alerts to slack/email.
 - How you would alert stakeholders about bad data getting through.	
+  Reviewing historical information if bad data consistently getting through - review with other teams about possible changes to interface.
