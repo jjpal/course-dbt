@@ -71,7 +71,7 @@ More stakeholders are coming to us for data, but we need to get more models crea
     For core:
     - added dim_users that joins users table and address table - to be able to get some demographic information per state/country and to see user activity 
     - added dim_products that joins products and order_items tables - to be able to see inventory and last ordered 
-      itmes together. 
+      items together. 
     - added fact_order that includes orders information, applied discount/current promo status from promos table, ordered quantity from order_items, and product price/ inventory to apply possible discount if product is not available.
 
     For Marketing:

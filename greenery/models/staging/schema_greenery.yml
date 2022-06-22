@@ -137,7 +137,7 @@ models:
           - unique
           - not_null
       - name: address_guid    
-        description: Delivery address for this order
+        description: UID for each unique address
         tests:
           - unique
           - not_null
