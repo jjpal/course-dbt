@@ -42,17 +42,21 @@ After you create the role you still need to grant it usage access on your schema
 You can use the grant macro example from this week and make any necessary changes for postgres syntax
 
 To check if your grants worked as expected, query the information schema (inputing the table name you want to check): 
-'''
+```
 SELECT grantee, privilege_type
 FROM information_schema.role_table_grants
 WHERE table_name='mytable'
-'''
+```
 
 ---------------
 PART 4:   Try one dbt packages out and apply some macros or tests.
 ==============
 
 Install a package (i.e. dbt-utils, dbt-expectations) and apply one or more of the macros to your project
+
+* dbt-utils
+
+* dbt_privacy
 
 ---------------
 PART 5: After improving our project with all the things that we have learned about dbt, we want to show off our work!
