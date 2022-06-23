@@ -60,6 +60,3 @@ PART 5: After improving our project with all the things that we have learned abo
 
 Show (using dbt docs and the model DAGs) how you have simplified or improved a DAG using macros and/or dbt packages.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~ Note to self: Add/update/finish documentation  & run added tests ~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
