@@ -6,6 +6,12 @@ PART 1: Create new models to answer the first two questions (answer questions in
 What is our overall conversion rate?
   NOTE: conversion rate is defined as 
       the # of unique sessions with a purchase event / total number of unique sessions. 
+'''sql
+select 
+     count(distinct case when check_outs = 1 then session_guid end)::float/count(distinct session_guid)::float 
+from dbt_juanita_p.int_session_events_agg 
+'''
+output: 0.6245674740484429
 
 What is our conversion rate by product?
 

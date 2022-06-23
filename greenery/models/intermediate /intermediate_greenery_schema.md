@@ -22,7 +22,12 @@ models:
         description: 
         tests:
           - unique
-          - not_null                                             
+          - not_null      
+      - name: 
+        description: 
+        tests:
+          - unique
+          - not_null                                                     
 
 - name: int_orders_count_delivered
     description: 
@@ -31,7 +36,12 @@ models:
         description: 
         tests:
           - unique
-          - not_null         
+          - not_null  
+      - name: 
+        description: 
+        tests:
+          - unique
+          - not_null                     
 
 - name: int_users_registered
     description: 
@@ -40,4 +50,9 @@ models:
         description: 
         tests:
           - unique
-          - not_null                                                  
+          - not_null     
+      - name: 
+        description: 
+        tests:
+          - unique
+          - not_null                                                          
