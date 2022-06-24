@@ -21,6 +21,23 @@ What is our conversion rate by product?
 
 A question to think about: 
   Why might certain products be converting at higher/lower rates than others? Note: we don't actually have data to properly dig into this, but we can make some hypotheses. 
+  higher/lower rates possibly due to users not going through the whole order workflow or maybe some plants are in season so they are more in demand than others.
+
+```sql
+select 
+      product_guid
+      , sum(add_to_cart) / count(distinct session_guid) as conversion_rate_by_product      
+ from dbt_juanita_p.int_user_sessions_product_agg
+ group by 1
+ ```
+ output: (5 rows)
+ product_guid	                        conversion_rate_by_product
+05df0866-1a66-41d8-9ed7-e2bbcddd6a3d	0.550000000000000
+35550082-a52d-4301-8f06-05b30f6f3616	0.533333333333333
+37e0062f-bd15-4c3e-b272-558a86d90598	0.548387096774194
+4cda01b9-62e2-46c5-830f-b7f262a58fb1	0.39344262295082
+55c6a062-5f4a-4a8b-a8e5-05ea5e6715a3	0.516129032258065
+
 
 ---------------
 PART 2: Apply dbt macros to improve our dbt project.
