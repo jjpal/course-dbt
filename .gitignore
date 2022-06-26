@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # workspace
-http:/
+/http:
+localhost:8081 
