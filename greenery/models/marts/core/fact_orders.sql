@@ -18,12 +18,12 @@ select
   , pr.promo_status
   , oi.product_guid
   , oi.quantity
-  , p.product_inventory
-  , p.product_price
+  , op.product_inventory
+  , op.product_price
 from {{ ref('stg_greenery__orders') }} o
 left join {{ ref('stg_greenery__promos') }} pr
   on o.promo_guid = pr.promo_guid
 left join {{ ref('stg_greenery__order_items') }} oi
   on o.order_guid = oi.order_guid
-left join {{ ref('stg_greenery__products') }} p
-  on oi.product_guid = p.product_guid
+left join {{ ref('int_order_items_product_agg') }} op
+  on oi.product_guid = op.product_guid
