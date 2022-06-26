@@ -5,14 +5,16 @@
 }}
 
 select
-    p.product_guid
-  , p.product_name
-  , p.product_price
-  , p.product_inventory
-  , oi.quantity as current_ordered_items
-from {{ ref('stg_greenery__products') }} p
-left join {{ ref('stg_greenery__order_items') }} oi
-  on p.product_guid = oi.product_guid
+    intp.product_guid
+  , intp.product_name
+  , intp.product_price
+  , intp.product_inventory
+  , intp.product_ordered
+  , e.page_url as product_url
+from {{ ref('int_order_items_product_agg') }} intp
+left join {{ ref('stg_greenery__events') }} e
+  on intp.product_guid = e.product_guid
+ 
 
 
-  
+   
