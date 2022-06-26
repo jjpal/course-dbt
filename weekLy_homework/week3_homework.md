@@ -45,6 +45,8 @@ PART 2: Apply dbt macros to improve our dbt project.
 
 Create a macro to simplify part of a model(s). Think about what would improve the usability or modularity of your code by applying a macro. Large case statements, or blocks of SQL that are often repeated make great candidates. Document the macro(s) using a .yml file in the macros directory.
 
+macro and documentation included
+
 ---------------
 PART 3: Grant permissions to our dbt models in our postgres database so that other roles can have access to them.
 ==============
@@ -53,6 +55,7 @@ Add a post hook to your project to apply grants to the role “reporting”. Cre
 
 After you create the role you still need to grant it usage access on your schema dbt_<firstname>_<lastinitial> (what you set in your profiles.yml in week 1) which can be done using an on-run-end hook
 
+completed
 
 ---------------
 PART 4:   Try one dbt packages out and apply some macros or tests.
@@ -60,7 +63,7 @@ PART 4:   Try one dbt packages out and apply some macros or tests.
 
 Install a package (i.e. dbt-utils, dbt-expectations) and apply one or more of the macros to your project
 
-* dbt-utils
+* dbt-utils - dbt_utils.get_query_results_as_dict
 
 * dbt_privacy
 

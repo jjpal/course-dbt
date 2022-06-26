@@ -170,7 +170,69 @@ models:
           - unique
           - not_null                                             
 
+- name: int_orders_status_agg_basic
+    description: Contains session aggregation order_status
+    columns: 
+      - name: user_guid
+        description:  Unique user UUID
+        tests:
+          - unique
+          - not_null
+     - name: order_guid
+        description: Unique order UUID
+        tests:
+          - unique
+          - not_null
+      - name: orders_created_at_utc
+        description: timeframe orders were created
+        tests:
+          - unique
+          - not_null
+      - name: delivered
+        description: aggreated delivered order_status type
+        tests:
+          - unique
+          - not_null
+      - name: shipped
+        description: aggreated shipped order_status type
+        tests:
+          - unique
+          - not_null
+      - name: preparing
+        description: aggreated preparing order_status type
+        tests:
+          - unique
+          - not_null                 
 
+- name: int_orders_status_agg
+    description: 
+    columns: 
+     - name: order_guid
+        description: Unique order UUID
+        tests:
+          - unique
+          - not_null
+     - name: user_guid
+        description:  Unique user UUID
+        tests:
+          - unique
+          - not_null
+     - name: address_guid
+        description:  Unique user UUID
+        tests:
+          - unique
+          - not_null         
+      - name: orders_created_at_utc
+        description: timeframe orders were created
+        tests:
+          - unique
+          - not_null
+      - name: order_statuses
+        description: aggregated list of order statuses
+        tests:
+          - unique
+          - not_null
+     
        
        
                
