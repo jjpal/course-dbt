@@ -33,6 +33,21 @@ models:
         tests:
           - unique
           - not_null                                                     
+    - name: product_name
+        description: name of product
+        tests:
+          - unique
+          - not_null      
+      - name: product_inventory
+        description: product inventory on hand
+        tests:
+          - unique
+          - not_null
+      - name: product_price
+        description: price for product
+        tests:
+          - unique
+          - not_null  
 
 - name: int_orders_count_delivered
     description: Contains orders aggregated and time for delivery
@@ -71,7 +86,7 @@ models:
         tests:
           - unique
           - not_null     
-      - name: page_views
+    - name: page_views
         description: aggreated page view event type
         tests:
           - unique

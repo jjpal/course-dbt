@@ -28,13 +28,13 @@ models:
         tests:
           - unique
           - not_null
-      - name: add_to_cart 
-        description: event type from different user session in order workflow
+      - name: product_name
+        description: name of product
         tests:
           - unique
           - not_null
-      - name: session_guid
-        description: UUID of each event sessions
+      - name: conversion_rate_by_product
+        description: summation of addtocart events / unique count of event sessions
         tests:
           - unique
           - not_null	     

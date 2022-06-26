@@ -2,8 +2,8 @@ version: 2
 
 models:
   - name: dim_products
-    description:  
-    columns: contains product inventory and last ordered items together from staging model. 
+    description: contains product inventory and last ordered items together from staging model.  
+    columns: 
       - name: product_guid
         description: UUID for each unique product on platform
         tests:
@@ -24,47 +24,57 @@ models:
         tests:
           - unique
           - not_null
-      - name: current_ordered_items
+      - name: product_ordered
         description: Number of units currently ordered from staging
         tests:
           - unique
-          - not_null                              
+          - not_null
+        - name: product_url
+        description: product URL page 
+        tests:
+          - unique
+          - not_null                                  
 
 - name: dim_users
-    description: staging users and address models joined to include all personal user info
+    description: intermediate, users and address models joined to include all personal user info
     columns: 
       - name: user_guid
-        description: UID for each unique user from staging
+        description: UID for each unique user 
         tests:
           - unique
           - not_null
-      - name: first_name
-        description: first name of user from staging
+      - name: user_full_name
+        description: user fullname
         tests:
           - unique
           - not_null                                                                
-      - name: last_name
-        description: last name of user from staging
-        tests:
-          - unique
-          - not_null         
       - name: user_email
-        description: email address of user from staging 
+        description: email address of user
         tests:
           - unique
           - not_null         
       - name: user_phone_number
-        description: phone number of user from staging
+        description: phone number of user
         tests:
           - unique
-          - not_null         
+          - not_null
+      - name: user_registered on
+        description: date user created the account
+        tests:
+          - unique
+          - not_null               
       - name: last_update_activity
         description: timeframe from when user registered up to last updated activity
         tests:
           - unique
-          - not_null         
+          - not_null
+      - name: user_account_age
+        description: timeframe since the user registered to greenery 
+        tests:
+          - unique
+          - not_null                  
       - name: user_address
-        description: default delivery address for the user from staging
+        description: default delivery address for the user 
         tests:
           - unique
           - not_null         
