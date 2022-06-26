@@ -65,7 +65,7 @@ Install a package (i.e. dbt-utils, dbt-expectations) and apply one or more of th
 
 * dbt-utils - dbt_utils.get_query_results_as_dict
 
-* dbt_privacy
+* dbt_privacy - installed but didn't apply any of the macros
 
 ---------------
 PART 5: After improving our project with all the things that we have learned about dbt, we want to show off our work!
