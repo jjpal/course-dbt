@@ -14,4 +14,3 @@ join {{ ref('stg_greenery__products') }} as p
 on oi.product_guid = p.product_guid
 group by 1, 3, 4, 5
 order by product_ordered desc  
-    
