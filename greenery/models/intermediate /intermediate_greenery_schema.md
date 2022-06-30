@@ -76,11 +76,16 @@ models:
         tests:
           - unique
           - not_null     
-      - name:  events_created_at_utc
-        description: Timestamp of the event
+      - name:  session_start
+        description: Timestamp of the event session start 
         tests:
           - unique
           - not_null
+      - name:  session_end
+        description: Timestamp of the event session end
+        tests:
+          - unique
+          - not_null          
    - name: user_guid    
         description: Unique user UUID
         tests:
