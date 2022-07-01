@@ -29,13 +29,13 @@ models:
         tests:
           - unique
           - not_null
-        - name: product_url
+      - name: product_url
         description: product URL page 
         tests:
           - unique
           - not_null                                  
 
-- name: dim_users
+  - name: dim_users
     description: intermediate, users and address models joined to include all personal user info
     columns: 
       - name: user_guid
@@ -94,8 +94,8 @@ models:
           - unique
           - not_null            
 
-- name: fact_orders
-    description: 
+  - name: fact_orders
+    description: orders_promo_order_items
     columns: 
       - name: order_guid
         description: UUID for each unique order on platform from staging
@@ -153,8 +153,8 @@ models:
           - unique
           - not_null    
       - name: quantity 
-        description: 
-        tests: Number of units of the product in this order from staging
+        description: Number of units of the product in this order from staging
+        tests: 
           - unique
           - not_null      
       - name: product_inventory

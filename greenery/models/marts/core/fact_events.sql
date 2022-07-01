@@ -20,7 +20,7 @@ with events_aggregate_as_session_grain as (
         {%- if not loop.last %},{% endif -%}
       {% endfor %}
       , count(distinct product_guid) as products_viewed_count    
-      , count(distinct order_guid) as session_orders_count        
+      , count(distinct order_guid) as session_orders_count
   from {{ ref('stg_greenery__events')}}
   group by 1, 2
 )

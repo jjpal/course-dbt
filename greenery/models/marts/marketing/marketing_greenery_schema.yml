@@ -54,7 +54,7 @@ models:
         tests:
           - unique
           - not_null
-      - name:phone_number as user_phone_number   
+      - name: phone_number as user_phone_number   
         description: the user phone number entered for the account 
         tests:
           - unique

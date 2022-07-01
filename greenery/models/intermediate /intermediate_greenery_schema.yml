@@ -9,7 +9,7 @@ models:
         tests:
           - unique
           - not_null
-     - name: order_count
+      - name: order_count
         description: order count grouped by state
         tests:
           - unique
@@ -18,9 +18,9 @@ models:
         description: order totals by state
         tests:
           - unique
-          - not_null         
+          - not_null
 
-- name: int_order_items_product_agg
+  - name: int_order_items_product_agg
     description: Contains order item aggregated products
     columns: 
       - name: product_guid 
@@ -29,11 +29,10 @@ models:
           - unique
           - not_null      
       - name: product_ordered
-        description: aggregated quantity of products ordered
         tests:
           - unique
           - not_null                                                     
-    - name: product_name
+      - name: product_name
         description: name of product
         tests:
           - unique
@@ -49,7 +48,7 @@ models:
           - unique
           - not_null  
 
-- name: int_orders_count_delivered
+  - name: int_orders_count_delivered
     description: Contains orders aggregated and time for delivery
     columns: 
       - name: user_guid
@@ -68,7 +67,7 @@ models:
           - unique
           - not_null                       
 
-- name: int_session_events_agg
+  - name: int_session_events_agg
     description: Contains event sessions aggregation
     columns: 
       - name: session_guid  
@@ -86,17 +85,17 @@ models:
         tests:
           - unique
           - not_null          
-   - name: user_guid    
+      - name: user_guid    
         description: Unique user UUID
         tests:
           - unique
           - not_null     
-    - name: page_views
+      - name: page_views
         description: aggreated page view event type
         tests:
           - unique
           - not_null
-   - name: add_to_carts
+      - name: add_to_carts
         description: aggreated add to cart event type
         tests:
           - unique
@@ -106,16 +105,16 @@ models:
         tests:
           - unique
           - not_null                          
-    - name: package_ships
+      - name: package_ships
         description: aggreated package shipped event type
         tests:
           - unique
           - not_null    
 
-- name: int_user_sessions_product_agg
+  - name: int_user_sessions_product_agg
     description: Contains session aggregation for users
     columns: 
-     - name: user_guid
+      - name: user_guid
         description: Unique user UUID
         tests:
           - unique
@@ -151,7 +150,7 @@ models:
           - unique
           - not_null  
 
-- name: int_users_registerd
+  - name: int_users_registered
     description: Contains user registration timestamp, fullname and how long account has been open
     columns: 
       - name: user_guid
@@ -175,7 +174,7 @@ models:
           - unique
           - not_null                                             
 
-- name: int_orders_status_agg_basic
+  - name: int_orders_status_agg_basic
     description: Contains session aggregation order_status
     columns: 
       - name: user_guid
@@ -183,7 +182,7 @@ models:
         tests:
           - unique
           - not_null
-     - name: order_guid
+      - name: order_guid
         description: Unique order UUID
         tests:
           - unique
@@ -209,20 +208,20 @@ models:
           - unique
           - not_null                 
 
-- name: int_orders_status_agg
-    description: 
+  - name: int_orders_status_agg
+    description: orders aggregated by order status
     columns: 
-     - name: order_guid
+      - name: order_guid
         description: Unique order UUID
         tests:
           - unique
           - not_null
-     - name: user_guid
+      - name: user_guid
         description:  Unique user UUID
         tests:
           - unique
           - not_null
-     - name: address_guid
+      - name: address_guid
         description:  Unique user UUID
         tests:
           - unique
