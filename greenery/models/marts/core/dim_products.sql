@@ -10,6 +10,7 @@ select
   , intp.product_price
   , intp.product_inventory
   , intp.product_ordered
+  , e.session_guid as session_guid
   , e.page_url as product_url
 from {{ ref('int_order_items_product_agg') }} intp
 left join {{ ref('stg_greenery__events') }} e

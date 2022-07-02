@@ -29,6 +29,11 @@ models:
         tests:
           - unique
           - not_null
+      - name: session_guid
+        description: UUID for each unique session on platform
+        tests:
+          - unique
+          - not_null
       - name: product_url
         description: product URL page 
         tests:
@@ -167,5 +172,38 @@ models:
         tests:
           - unique
           - not_null   
-                                  
+
+  - name: fact_events
+    description: contains events aggregation with session_grain from staging model.  
+    columns: 
+      - name: session_guid
+        description: UUID for each unique session on platform
+        tests:
+          - unique
+          - not_null
+      - name: user_guid
+        description: UUID for each user on platform
+        tests:
+          - unique
+          - not_null
+      - name: events_count
+        description: event_guid count
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        description: session event type
+        tests:
+          - unique
+          - not_null
+      - name: products_viewed_count
+        description: distinct count of product_guids
+        tests:
+          - unique
+          - not_null     
+      - name: session_orders_count
+        description: distinct count of order_guids
+        tests:
+          - unique
+          - not_null 
                                                                                 
