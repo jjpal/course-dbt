@@ -29,7 +29,7 @@ order_id	|	user_id	|	promo_id	|	address_id	|	created_at	|	order_cost	|	shipping_
 05202733-0e17-4726-97c2-0520c024ab85	|	5951d1d2-614e-4557-a2de-8298a1e4b179	|		|	3a286955-76c1-4b50-b5fc-61e4e4e3be4d	|	2021-02-11 05:29:28	|	441	|	9.71	|	450.71	|	8404ed05-0128-4aeb-8ed5-6e44908875c4	|	ups	|	2021-02-19 10:15:26	|		|	shipped	|	18540c777b639c1fbe5a478894a9de5b	|	2022-06-28 22:42:18	|	2022-06-28 22:42:18	|		|
 
 
-
+---------------
 
 Part 2. Modeling challenge
 
@@ -73,17 +73,20 @@ total_sessions	|	page_view	|	add_to_cart	|	checkout	|
 |---		        |---		    |---		      |---	|
 578	            |	578	      |	467	        |	361	|
 
-            | Sessions Flow                 | Product Sessions Conversion |
-            | -----------                   | ----------- |
-            | land to page_views            | 100% | 
-            | from page_view to add_to_cart | 81% |
-            | from add_to_cart to checkout  | 77% |
-            | from page_view to checkout    | 62% |
+| Sessions Flow                 |  Product Sessions Conversion |
+|---		                        |---		    |
+land to page_views              | 100%      | 
+from page_view to add_to_cart   | 81%       |
+from add_to_cart to checkout    | 77%       |
+from page_view to checkout      | 62%       |
             
 
 
 - [x] Use an exposure on your product analytics model to represent that this is being used in downstream BI tools. 
+
 17:59:42  Found 23 models, 276 tests, 1 snapshot, 0 analyses, 427 macros, 1 operation, 0 seed files, 7 sources, 1 exposure, 0 metrics
+
+---------------
 
 Part 3: Reflection questions
 
@@ -91,16 +94,16 @@ Part 3: Reflection questions
 
 3A. dbt next steps for you - Reflecting on your learning in this class...
 
-* if your organization is thinking about using dbt, how would you pitch the value of dbt/analytics engineering to a decision maker at your organization?
+1] if your organization is thinking about using dbt, how would you pitch the value of dbt/analytics engineering to a decision maker at your organization?
 
-With dbt, it is much easier to model the data, view connections, track revisions to the SQL code, take snapshots, and document the project for current and future analytics engineers, analysts, and other stakeholders. Display several pretty DAGs :) for execs, go over some models to show Analytics/Products teams how they can use information downstream and go over tests/documentation for data governance teams.
+- With dbt, it is much easier to model the data, view connections, track revisions to the SQL code, take snapshots, and document the project for current and future analytics engineers, analysts, and other stakeholders. Display several pretty DAGs :) for execs, go over some models to show Analytics/Products teams how they can use information downstream and go over tests/documentation for data governance teams.
 
 
-* if your organization is using dbt, what are 1-2 things you might do differently / recommend to your organization based on learning from this course?
+2] if your organization is using dbt, what are 1-2 things you might do differently / recommend to your organization based on learning from this course?
 
-N/A, but I would recommend following a style guide for consistency, refactoring to use packages/macros that include several tests, and including detailed documentation for future reference.
+- N/A, but I would recommend following a style guide for consistency, refactoring to use packages/macros that include several tests, and including detailed documentation for future reference.
 
-* if you are thinking about moving to analytics engineering, what skills have you picked that give you the most confidence in pursuing this next step?
+3] if you are thinking about moving to analytics engineering, what skills have you picked that give you the most confidence in pursuing this next step?
 
 - I learned to develop SQL code in a manner that is more modularized to be reusable at different stages and used as building blocks to answer different business questions for teams.
 - Writing tests at early stages to test assumptions made of the source data and to verify the data is valid and in compliance with data policies.
@@ -110,15 +113,16 @@ N/A, but I would recommend following a style guide for consistency, refactoring 
  how would you go about setting up a production/scheduled dbt run of your project in an ideal state? 
  You don’t have to actually set anything up - just jot down what you would do and why and post in a README file.
 
-* Hints: what steps would you have? Which orchestration tool(s) would you be interested in using? 
+1] what steps would you have? Which orchestration tool(s) would you be interested in using? 
 
-. To start with dbt Cloud and then move to Dagster to be able to customize deployment for dbt projects a bit more.
+- To start with dbt Cloud and then move to Dagster to be able to customize deployment for dbt projects a bit more.
 
-* What schedule would you run your project on? 
+2] What schedule would you run your project on? 
 
-. To start twice a day - during test phase and change the schedule if required or as needed.
+- To start twice a day - during test phase and change the schedule if required or as needed.
 
-* Which metadata would you be interested in using? / How/why would you use the specific metadata? 
+3] Which metadata would you be interested in using? / How/why would you use the specific metadata? 
 
-. Tables, columns, foreign keys, indexes  - to track and analyze schema changes
-. User, user groups, privledges, connection history, sessions, table sizes, rows in tables - for data protestion
+- Tables, columns, foreign keys, indexes  - to track and analyze schema changes
+- User, user groups, privledges, connection history, sessions, table sizes, rows in tables - for data 
+  protestion.
