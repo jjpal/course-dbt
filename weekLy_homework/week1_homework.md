@@ -6,7 +6,7 @@ Week 1 Project Aanswers:
 
 1. How many users do we have?
 
-```
+```sql
 select count(distinct user_guid) as users
 from dbt.dbt_juanita_p.stg_greenery__users;
 ```
